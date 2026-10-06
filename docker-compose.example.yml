@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=${DOMAIN}
+      - N8N_PROTOCOL=https
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./scripts:/host/scripts:ro
+
+  edge-tts:
+    image: ghcr.io/nicoxso/edge-tts-server:latest
+    restart: always
+    ports:
+      - "5050:5050"
+
+volumes:
+  n8n_data:

@@ -1,0 +1,19 @@
+# Environment & credentials
+.env
+*.pickle
+*_credentials.json
+*_token.json
+
+# Output & logs
+output/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# System
+.DS_Store
+Thumbs.db
